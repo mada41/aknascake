@@ -1,0 +1,28 @@
+<h2>Show cake</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @cake.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @cake.description %>
+  </li>
+
+  <li>
+    <strong>Image:</strong>
+    <%= @cake.image %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @cake.price %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: cake_path(@conn, :edit, @cake) %>
+<%= link "Back", to: cake_path(@conn, :index) %>

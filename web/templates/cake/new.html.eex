@@ -1,0 +1,6 @@
+<h2>New cake</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: cake_path(@conn, :create) %>
+
+<%= link "Back", to: cake_path(@conn, :index) %>

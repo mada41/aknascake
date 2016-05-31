@@ -1,0 +1,32 @@
+<h2>Listing cakes</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Price</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for cake <- @cakes do %>
+    <tr>
+      <td><%= cake.name %></td>
+      <td><%= cake.description %></td>
+      <td><%= cake.image %></td>
+      <td><%= cake.price %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: cake_path(@conn, :show, cake), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: cake_path(@conn, :edit, cake), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: cake_path(@conn, :delete, cake), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New cake", to: cake_path(@conn, :new) %>
